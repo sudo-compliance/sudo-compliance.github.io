@@ -340,27 +340,36 @@
             <span class="availability-text">Open to opportunities</span>
           </div>
 
-          <div class="contact-email-wrapper">
-            <a href="mailto:alex@example.com" class="contact-email contact-email-link">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-              <span class="contact-email-text">alex@example.com</span>
-            </a>
-            <button class="copy-email-btn" aria-label="Copy email address" title="Copy email">
-              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-              </svg>
-              <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              <span class="copy-tooltip">Copied!</span>
+          <!-- Contact form — submissions delivered via EmailJS (Gmail SMTP) -->
+          <form class="contact-form" id="contact-form" novalidate>
+            <div class="cf-row">
+              <div class="cf-field">
+                <label for="cf-name">Name</label>
+                <input type="text" id="cf-name" name="from_name" placeholder="Your full name" required autocomplete="name">
+              </div>
+              <div class="cf-field">
+                <label for="cf-email">Email</label>
+                <input type="email" id="cf-email" name="reply_to" placeholder="your@email.com" required autocomplete="email">
+              </div>
+            </div>
+            <div class="cf-field">
+              <label for="cf-subject">Subject</label>
+              <input type="text" id="cf-subject" name="subject" placeholder="What's this about?">
+            </div>
+            <div class="cf-field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" placeholder="Your message…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary cf-submit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              <span class="cf-submit-text">Send Message</span>
+              <span class="cf-submit-sending" aria-hidden="true">Sending…</span>
             </button>
-          </div>
+            <p class="cf-feedback cf-success" role="alert" aria-live="polite"></p>
+            <p class="cf-feedback cf-error" role="alert" aria-live="polite"></p>
+          </form>
 
-          <p class="contact-location" style="font-size: var(--text-sm); color: var(--text-muted); margin-bottom: var(--space-2xl);">San Francisco, CA</p>
+          <p class="contact-location"></p>
 
           <div class="contact-socials">
             <!-- Rendered by JS from content data -->
@@ -387,8 +396,9 @@
   </footer>
 
   <!-- ── Scripts ────────────────────────────── -->
-  <script src="data/content.js?v=7"></script>
-  <script src="js/main.js?v=7"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="data/content.js?v=8"></script>
+  <script src="js/main.js?v=8"></script>
   <script>
     document.getElementById("footer-year").textContent = new Date().getFullYear();
   </script>

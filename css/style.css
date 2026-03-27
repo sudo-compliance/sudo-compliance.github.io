@@ -1327,8 +1327,15 @@ body::before {
 
 .contact-content {
   text-align: center;
-  max-width: 600px;
+  max-width: 620px;
   margin: 0 auto;
+}
+
+.contact-location {
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  margin-top: var(--space-2xl);
+  margin-bottom: var(--space-xl);
 }
 
 .contact-title {
@@ -1591,7 +1598,95 @@ body::before {
 }
 
 /* ============================================
-   COPY EMAIL BUTTON & AVAILABILITY
+   CONTACT FORM
+   ============================================ */
+
+.contact-form {
+  text-align: left;
+  margin: var(--space-2xl) auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+}
+
+.cf-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.cf-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cf-field label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.cf-field input,
+.cf-field textarea {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  color: var(--text-primary);
+  transition: border-color var(--duration-fast) ease,
+              box-shadow var(--duration-fast) ease;
+  outline: none;
+  width: 100%;
+  resize: vertical;
+}
+
+.cf-field input::placeholder,
+.cf-field textarea::placeholder {
+  color: var(--text-muted);
+}
+
+.cf-field input:focus,
+.cf-field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.cf-field input.invalid,
+.cf-field textarea.invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.08);
+}
+
+.cf-submit {
+  align-self: flex-start;
+  margin-top: var(--space-sm);
+}
+
+.cf-submit-sending { display: none; }
+.cf-submit.loading .cf-submit-text { display: none; }
+.cf-submit.loading .cf-submit-sending { display: inline; }
+.cf-submit:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.cf-feedback {
+  font-size: var(--text-sm);
+  display: none;
+  margin-top: var(--space-sm);
+}
+.cf-feedback.visible { display: block; }
+.cf-success { color: #22c55e; }
+.cf-error   { color: #ef4444; }
+
+/* ============================================
+   AVAILABILITY BADGE
    ============================================ */
 
 .contact-availability {
@@ -1625,67 +1720,7 @@ body::before {
   letter-spacing: 0.05em;
 }
 
-.contact-email-wrapper {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  margin-bottom: var(--space-sm);
-}
-
-.copy-email-btn {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  background: var(--bg-card);
-  cursor: pointer;
-  transition: all var(--duration-base) var(--ease-out-expo);
-}
-
-.copy-email-btn:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-}
-
-.copy-email-btn svg {
-  width: 18px;
-  height: 18px;
-}
-
-.copy-email-btn.copied {
-  border-color: #22c55e;
-  color: #22c55e;
-  background: rgba(34, 197, 94, 0.08);
-}
-
-.copy-tooltip {
-  position: absolute;
-  top: -32px;
-  left: 50%;
-  transform: translateX(-50%) translateY(5px);
-  background: var(--bg-tertiary);
-  color: #22c55e;
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-  padding: 4px 10px;
-  border-radius: var(--radius-sm);
-  border: 1px solid rgba(34, 197, 94, 0.2);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.copy-email-btn.copied .copy-tooltip {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
+/* (copy-email button removed — replaced by contact form) */
 
 /* ============================================
    GRADIENT BORDER ANIMATIONS
@@ -1952,9 +1987,13 @@ body::before {
     display: none;
   }
 
-  .contact-email-wrapper {
-    flex-direction: column;
-    gap: var(--space-sm);
+  .cf-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cf-submit {
+    width: 100%;
+    justify-content: center;
   }
 
   .footer-inner {

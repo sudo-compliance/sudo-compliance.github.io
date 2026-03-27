@@ -24,7 +24,7 @@
     setupMagneticButtons();
     setup3DCardTilt();
     setupHeroRoleSwitcher();
-    setupCopyEmail();
+    setupContactForm();
     setupCardGlow();
     setupHighlightReveal();
     setupKineticTypography();
@@ -66,8 +66,6 @@
     renderHonors(d.honors);
 
     // Contact
-    setAttr(".contact-email-link", "href", `mailto:${d.email}`);
-    setText(".contact-email-text", d.email);
     setText(".contact-location", d.location);
     renderSocials(d.social);
 
@@ -744,49 +742,82 @@
   }
 
   // ============================================
-  // COPY EMAIL BUTTON
+  // CONTACT FORM  (EmailJS → Gmail SMTP)
   // ============================================
+  //
+  // One-time setup at https://www.emailjs.com (free — 200 emails/month):
+  //   1. Sign Up → Email Services → Add Service → Gmail
+  //      (authorise with OAuth — no password stored here)
+  //   2. Email Templates → Create Template
+  //      Use these variable names in the template body:
+  //        {{from_name}}  — sender's name
+  //        {{reply_to}}   — sender's email  (set as Reply-To header)
+  //        {{subject}}    — message subject
+  //        {{message}}    — message body
+  //   3. Account → API Keys → copy your Public Key
+  //
+  // Then replace the three strings below and you're live.
 
-  function setupCopyEmail() {
-    var btn = document.querySelector(".copy-email-btn");
-    if (!btn) return;
-    if (typeof PROFILE === "undefined") return;
+  var EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // Account → API Keys
+  var EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // Email Services → Service ID
+  var EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // Email Templates → Template ID
 
-    var copyIcon = btn.querySelector(".copy-icon");
-    var checkIcon = btn.querySelector(".check-icon");
+  function setupContactForm() {
+    if (typeof emailjs === "undefined") return;
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
-    btn.addEventListener("click", function () {
-      var email = PROFILE.email;
+    var form = document.getElementById("contact-form");
+    if (!form) return;
 
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(email).then(function () {
-          showCopied();
-        });
-      } else {
-        // Fallback
-        var textarea = document.createElement("textarea");
-        textarea.value = email;
-        textarea.style.position = "fixed";
-        textarea.style.opacity = "0";
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textarea);
-        showCopied();
-      }
+    var btn       = form.querySelector(".cf-submit");
+    var successEl = form.querySelector(".cf-success");
+    var errorEl   = form.querySelector(".cf-error");
+
+    // Clear invalid highlight on input
+    form.querySelectorAll("[required]").forEach(function (field) {
+      field.addEventListener("input", function () {
+        if (field.value.trim()) field.classList.remove("invalid");
+      });
     });
 
-    function showCopied() {
-      btn.classList.add("copied");
-      if (copyIcon) copyIcon.style.display = "none";
-      if (checkIcon) checkIcon.style.display = "block";
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-      setTimeout(function () {
-        btn.classList.remove("copied");
-        if (copyIcon) copyIcon.style.display = "block";
-        if (checkIcon) checkIcon.style.display = "none";
-      }, 2000);
-    }
+      // Validate required fields
+      var valid = true;
+      form.querySelectorAll("[required]").forEach(function (field) {
+        field.classList.remove("invalid");
+        if (!field.value.trim()) {
+          field.classList.add("invalid");
+          valid = false;
+        }
+      });
+      if (!valid) return;
+
+      btn.disabled = true;
+      btn.classList.add("loading");
+      successEl.classList.remove("visible");
+      errorEl.classList.remove("visible");
+
+      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+        .then(function () {
+          form.reset();
+          form.querySelectorAll(".invalid").forEach(function (f) {
+            f.classList.remove("invalid");
+          });
+          successEl.textContent = "Message sent — I\u2019ll be in touch soon.";
+          successEl.classList.add("visible");
+          btn.disabled = false;
+          btn.classList.remove("loading");
+        })
+        .catch(function (err) {
+          errorEl.textContent = "Something went wrong. Please try again.";
+          errorEl.classList.add("visible");
+          btn.disabled = false;
+          btn.classList.remove("loading");
+          console.error("EmailJS error:", err);
+        });
+    });
   }
 
   // ============================================
