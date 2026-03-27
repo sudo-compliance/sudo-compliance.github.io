@@ -146,6 +146,13 @@ const PROFILE = {
   // ── Projects / Portfolio ───────────────────
   projects: [
     {
+      title: "GRC Dashboard",
+      description: "Local-first GRC compliance tracking dashboard covering ISO 27001, ISO 42001, NIST CSF 2.0, PCI-DSS, DORA, CIS Controls, SOC 2, UK GDPR, and Cyber Essentials. Built with React, Vite, and Tailwind CSS — fully offline, no backend.",
+      tags: ["React", "TypeScript", "ISO 27001", "NIST CSF", "Risk Management"],
+      link: "https://sudo-compliance.github.io/grc-dashboard",
+      featured: true,
+    },
+    {
       title: "Secure Service Delivery Framework",
       description: "A structured implementation and transition framework for secure SaaS client onboarding, controlled service transition and audit-ready evidence aligned to ISO/IEC 27001 and ITIL 4.",
       tags: ["ISO 27001", "ITIL 4", "SaaS Security"],
