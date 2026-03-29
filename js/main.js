@@ -764,6 +764,17 @@
 
   function setupContactForm() {
     if (typeof emailjs === "undefined") return;
+
+    // Guard: don't attempt sends until credentials are configured
+    if (
+      EMAILJS_PUBLIC_KEY  === "YOUR_PUBLIC_KEY"  ||
+      EMAILJS_SERVICE_ID  === "YOUR_SERVICE_ID"  ||
+      EMAILJS_TEMPLATE_ID === "YOUR_TEMPLATE_ID"
+    ) {
+      console.warn("EmailJS: replace the placeholder IDs in main.js before using the contact form.");
+      return;
+    }
+
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
 
     var form = document.getElementById("contact-form");
@@ -799,23 +810,32 @@
       successEl.classList.remove("visible");
       errorEl.classList.remove("visible");
 
-      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+      // Collect params explicitly — more reliable than sendForm() serialisation
+      var params = {
+        from_name : form.querySelector('[name="from_name"]').value.trim(),
+        reply_to  : form.querySelector('[name="reply_to"]').value.trim(),
+        subject   : (form.querySelector('[name="subject"]').value || "(no subject)").trim(),
+        message   : form.querySelector('[name="message"]').value.trim(),
+      };
+
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params)
         .then(function () {
           form.reset();
           form.querySelectorAll(".invalid").forEach(function (f) {
             f.classList.remove("invalid");
           });
-          successEl.textContent = "Message sent — I\u2019ll be in touch soon.";
+          successEl.textContent = "Message sent \u2014 I\u2019ll be in touch soon.";
           successEl.classList.add("visible");
           btn.disabled = false;
           btn.classList.remove("loading");
         })
         .catch(function (err) {
-          errorEl.textContent = "Something went wrong. Please try again.";
+          var msg = (err && err.text) ? err.text : JSON.stringify(err);
+          errorEl.textContent = "Send failed (" + (err && err.status ? err.status : "network") + "). Check browser console for details.";
           errorEl.classList.add("visible");
           btn.disabled = false;
           btn.classList.remove("loading");
-          console.error("EmailJS error:", err);
+          console.error("EmailJS error:", msg, err);
         });
     });
   }
