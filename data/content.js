@@ -146,10 +146,10 @@ const PROFILE = {
   // ── Projects / Portfolio ───────────────────
   projects: [
     {
-      title: "GRC Dashboard",
-      description: "Local-first GRC compliance tracking dashboard covering ISO 27001, ISO 42001, NIST CSF 2.0, PCI-DSS, DORA, CIS Controls, SOC 2, UK GDPR, and Cyber Essentials. Built with React, Vite, and Tailwind CSS — fully offline, no backend.",
-      tags: ["React", "TypeScript", "ISO 27001", "NIST CSF", "Risk Management"],
-      link: "https://sudo-compliance.github.io/grc-dashboard",
+      title: "DORA to ISO 27001 Mapping",
+      description: "Maps DORA's five pillars to ISO/IEC 27001:2022 Annex A controls with a UK FCA and PRA operational resilience overlay. Identifies the gaps firms operating under both regimes have to close.",
+      tags: ["DORA", "ISO 27001", "FCA/PRA", "Operational Resilience"],
+      link: "https://github.com/sudo-compliance/grc-lab/tree/main/topics/dora-iso27001-uk-operational-resilience-mapping",
       featured: true,
     },
     {

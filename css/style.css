@@ -677,53 +677,6 @@ body::before {
   height: 16px;
 }
 
-/* GRC Dashboard CTA button */
-.btn-dashboard {
-  background: transparent;
-  border: 1px solid rgba(212, 148, 58, 0.35);
-  color: var(--accent-light);
-  position: relative;
-  overflow: hidden;
-  font-weight: var(--weight-semibold);
-  letter-spacing: 0.01em;
-}
-
-.btn-dashboard::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg,
-    rgba(212, 148, 58, 0.08) 0%,
-    rgba(196, 106, 58, 0.06) 100%);
-  opacity: 0;
-  transition: opacity var(--duration-base) ease;
-}
-
-.btn-dashboard:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  transform: translateY(-2px);
-  box-shadow: 0 0 0 1px var(--accent-dark),
-              0 8px 24px rgba(212, 148, 58, 0.15);
-}
-
-.btn-dashboard:hover::before {
-  opacity: 1;
-}
-
-.btn-dashboard .btn-dashboard-ext {
-  width: 13px;
-  height: 13px;
-  opacity: 0.6;
-  transition: opacity var(--duration-fast) ease,
-              transform var(--duration-base) var(--ease-out-expo);
-}
-
-.btn-dashboard:hover .btn-dashboard-ext {
-  opacity: 1;
-  transform: translate(2px, -2px);
-}
-
 /* ============================================
    ABOUT SECTION
    ============================================ */
