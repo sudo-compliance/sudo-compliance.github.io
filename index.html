@@ -95,6 +95,7 @@
     }
 
     body {
+      overflow-x: clip;
       transition: background .35s ease, color .35s ease;
       background: var(--paper);
       color: var(--ink);
@@ -672,10 +673,12 @@
     }
     .foot {
       display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 22px 0;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 8px;
+      padding: 26px 0;
     }
     footer a { color: #b9b4a0; text-decoration: none; }
     footer a:hover { color: #f5f1e8; }
