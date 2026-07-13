@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Oge Ndukuba — Business Information Security Officer</title>
+  <meta name="description" content="Oge Ndukuba is an information security professional specialising in security governance, third-party cyber risk, ISO 27001 and operational resilience. Currently a Business Information Security Officer in UK banking.">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Oge Ndukuba — Business Information Security Officer">
+  <meta property="og:description" content="Security governance, third-party cyber risk, ISO 27001 and operational resilience — translated into decisions businesses can act on.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sudo-compliance.github.io">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Oge Ndukuba — Business Information Security Officer">
+  <meta name="twitter:description" content="Security governance, third-party risk and operational resilience.">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'><rect width='44' height='44' rx='6' fill='%23122a1f'/><text x='50%25' y='58%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='24' fill='%23e9e2d3'>N</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,340;9..144,420;9..144,560;9..144,640&family=Public+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ================================================================
+       OGE NDUKUBA — "ASSURANCE DOSSIER"
+       Editorial paper-and-ink aesthetic. Ruled ledger lines, numbered
+       sections, monospace annotations. Built to read like a signed-off
+       audit file, not a template.
+       ================================================================ */
+
+    :root {
+      color-scheme: light dark;
+      --contact-bg:   #16150f;
+      --paper:        #f5f1e8;
+      --paper-deep:   #eee8da;
+      --ink:          #16150f;
+      --ink-soft:     #4a4739;
+      --ink-faint:    #8a8571;
+      --rule:         #d8d1bd;
+      --rule-strong:  #b8b09a;
+      --green:        #14432f;
+      --green-bright: #1d6a49;
+      --brass:        #a06b1e;
+      --card:         #faf7f0;
+
+      --f-display: "Fraunces", Georgia, serif;
+      --f-body:    "Public Sans", -apple-system, sans-serif;
+      --f-mono:    "IBM Plex Mono", ui-monospace, monospace;
+
+      --max: 1120px;
+      --pad: clamp(20px, 5vw, 56px);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px; /* anchors clear the sticky header */
+      scrollbar-color: var(--rule-strong) var(--paper);
+    }
+
+    /* ── Dark theme: "night ledger" ──────────────────────────────
+       Follows system preference, overridable via the header toggle. */
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --paper:        #131208;
+        --paper-deep:   #0e0d06;
+        --ink:          #ece6d4;
+        --ink-soft:     #b5ae97;
+        --ink-faint:    #7d7761;
+        --rule:         #2c2919;
+        --rule-strong:  #474330;
+        --green:        #8fceac;
+        --green-bright: #6fbf94;
+        --brass:        #cf9440;
+        --card:         #1b1910;
+        --contact-bg:   #0b0a05;
+      }
+    }
+    :root[data-theme="dark"] {
+      --paper:        #131208;
+      --paper-deep:   #0e0d06;
+      --ink:          #ece6d4;
+      --ink-soft:     #b5ae97;
+      --ink-faint:    #7d7761;
+      --rule:         #2c2919;
+      --rule-strong:  #474330;
+      --green:        #8fceac;
+      --green-bright: #6fbf94;
+      --brass:        #cf9440;
+      --card:         #1b1910;
+      --contact-bg:   #0b0a05;
+    }
+
+    body {
+      transition: background .35s ease, color .35s ease;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--f-body);
+      font-size: 16.5px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* paper grain */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+      opacity: 0.32;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.045 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    ::selection { background: var(--green); color: var(--paper); }
+
+    a { color: inherit; }
+
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+
+    :focus-visible {
+      outline: 2px solid var(--green-bright);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding-left: var(--pad);
+      padding-right: var(--pad);
+    }
+
+    .mono {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── Top bar ─────────────────────────────────────────────── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: color-mix(in srgb, var(--paper) 88%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+    }
+
+    .bar-name {
+      font-family: var(--f-display);
+      font-weight: 560;
+      font-size: 1.05rem;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .bar-name span { color: var(--green-bright); }
+
+    nav.desktop { display: flex; gap: 28px; }
+    nav.desktop a {
+      font-family: var(--f-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: var(--ink-soft);
+      padding: 4px 0;
+      background: linear-gradient(var(--green), var(--green)) no-repeat left bottom / 0% 1px;
+      transition: color .25s, background-size .25s ease;
+    }
+    nav.desktop a:hover,
+    nav.desktop a:focus-visible { color: var(--green); background-size: 100% 1px; }
+
+    .theme-btn {
+      background: none;
+      border: 1px solid var(--rule-strong);
+      border-radius: 3px;
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      line-height: 1;
+      padding: 7px 10px;
+      cursor: pointer;
+      color: var(--ink);
+      margin-left: 18px;
+      transition: border-color .2s, color .2s, transform .15s;
+    }
+    .theme-btn:hover { border-color: var(--green); color: var(--green); transform: rotate(-12deg); }
+
+    .bar-right { display: flex; align-items: center; }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: 1px solid var(--rule-strong);
+      border-radius: 3px;
+      font-family: var(--f-mono);
+      font-size: 0.7rem;
+      letter-spacing: .1em;
+      padding: 7px 12px;
+      cursor: pointer;
+      color: var(--ink);
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav a {
+      padding: 14px var(--pad);
+      text-decoration: none;
+      font-family: var(--f-mono);
+      font-size: 0.75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--rule);
+      color: var(--ink-soft);
+    }
+
+    /* ── Hero ────────────────────────────────────────────────── */
+    .hero {
+      padding: clamp(64px, 10vw, 130px) 0 clamp(48px, 7vw, 90px);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-file {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      color: var(--ink-faint);
+      margin-bottom: clamp(28px, 5vw, 52px);
+      flex-wrap: wrap;
+    }
+
+    .hero h1 {
+      font-family: var(--f-display);
+      font-weight: 420;
+      font-size: clamp(3rem, 9.5vw, 7.2rem);
+      line-height: 0.98;
+      letter-spacing: -0.015em;
+      max-width: 12ch;
+    }
+    .hero h1 em {
+      font-style: italic;
+      font-weight: 340;
+      color: var(--green);
+    }
+
+    .hero-sub {
+      margin-top: clamp(24px, 4vw, 40px);
+      display: grid;
+      grid-template-columns: minmax(0, 58ch) 1fr;
+      gap: 32px;
+      align-items: end;
+    }
+
+    .hero-sub p {
+      font-size: clamp(1.02rem, 1.6vw, 1.2rem);
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
+    .hero-actions { margin-top: 34px; display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn {
+      font-family: var(--f-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 13px 22px;
+      border-radius: 3px;
+      transition: transform .15s ease, background .2s, color .2s, box-shadow .2s;
+      display: inline-block;
+    }
+    .btn-solid {
+      background: var(--green);
+      color: var(--paper);
+      box-shadow: 3px 3px 0 var(--rule-strong);
+    }
+    .btn-solid:hover { transform: translate(-1px,-1px); box-shadow: 5px 5px 0 var(--rule-strong); background: var(--green-bright); }
+    .btn-ghost {
+      border: 1px solid var(--rule-strong);
+      color: var(--ink);
+    }
+    .btn-ghost:hover { border-color: var(--green); color: var(--green); }
+
+    /* big ruled marginalia N in hero background */
+    .hero-mark {
+      position: absolute;
+      right: -3vw;
+      top: 8%;
+      font-family: var(--f-display);
+      font-weight: 640;
+      font-size: clamp(14rem, 34vw, 30rem);
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px var(--rule);
+      user-select: none;
+      pointer-events: none;
+      z-index: -1;
+    }
+    @supports (animation-timeline: scroll()) {
+      @media (prefers-reduced-motion: no-preference) {
+        .hero-mark {
+          animation: drift linear both;
+          animation-timeline: scroll(root);
+          animation-range: 0 120vh;
+        }
+        @keyframes drift {
+          to { transform: translateY(16vh) rotate(2deg); }
+        }
+      }
+    }
+
+    /* ── Specimen tape (marquee) ─────────────────────────────── */
+    .tape {
+      border-top: 1px solid var(--ink);
+      overflow: hidden;
+      padding: 12px 0;
+      margin-top: clamp(40px, 6vw, 72px);
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+              mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+    .tape-track {
+      display: flex;
+      gap: 0;
+      width: max-content;
+      animation: tape 38s linear infinite;
+    }
+    .tape:hover .tape-track { animation-play-state: paused; }
+    .tape span {
+      font-family: var(--f-mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      white-space: nowrap;
+      padding-right: 14px;
+    }
+    .tape span::after { content: "·"; color: var(--brass); padding-left: 14px; }
+    @keyframes tape { to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) {
+      .tape-track { animation: none; }
+    }
+
+    /* stat strip */
+    .stats {
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .stat {
+      padding: 26px 22px;
+      border-left: 1px solid var(--rule);
+    }
+    .stat:first-child { border-left: none; }
+    .stat b {
+      font-family: var(--f-display);
+      font-weight: 560;
+      font-size: clamp(1.7rem, 3.4vw, 2.5rem);
+      display: block;
+      line-height: 1;
+    }
+    .stat span {
+      color: var(--ink-faint);
+      display: block;
+      margin-top: 8px;
+    }
+
+    /* ── Sections ────────────────────────────────────────────── */
+    section { padding: clamp(64px, 9vw, 120px) 0 0; }
+
+    .sec-head {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 14px;
+      margin-bottom: clamp(32px, 5vw, 56px);
+    }
+    .sec-head .num {
+      font-family: var(--f-mono);
+      font-size: 0.78rem;
+      color: var(--brass);
+      letter-spacing: 0.1em;
+    }
+    .sec-head h2 {
+      font-family: var(--f-display);
+      font-weight: 460;
+      font-size: clamp(1.9rem, 4.4vw, 3.1rem);
+      letter-spacing: -0.01em;
+      line-height: 1.05;
+    }
+    .sec-head .side {
+      margin-left: auto;
+      color: var(--ink-faint);
+      display: none;
+    }
+    @media (min-width: 720px) { .sec-head .side { display: block; } }
+
+    /* ── About ───────────────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: clamp(32px, 6vw, 72px);
+    }
+    .about-grid > div:first-child p {
+      font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+    .about-grid > div:first-child p + p { margin-top: 1.2em; }
+    .about-grid > div:first-child p strong { color: var(--ink); font-weight: 600; }
+
+    .ledger { border-top: 1px solid var(--ink); }
+    .ledger li {
+      list-style: none;
+      display: flex;
+      gap: 16px;
+      padding: 13px 2px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      align-items: baseline;
+    }
+    .ledger li i {
+      font-style: normal;
+      font-family: var(--f-mono);
+      font-size: 0.68rem;
+      color: var(--brass);
+      min-width: 26px;
+    }
+
+    /* ── Capability ──────────────────────────────────────────── */
+    .cap-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      border-top: 1px solid var(--ink);
+      border-left: 1px solid var(--ink);
+    }
+    .cap {
+      border-right: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      padding: clamp(22px, 3.4vw, 36px);
+      background: transparent;
+      transition: background .25s;
+    }
+    .cap:hover { background: var(--card); }
+    .cap h3 {
+      font-family: var(--f-display);
+      font-weight: 560;
+      font-size: 1.25rem;
+      margin-bottom: 6px;
+    }
+    .cap .mono { color: var(--brass); display: block; margin-bottom: 16px; }
+    .cap ul { list-style: none; }
+    .cap li {
+      padding: 8px 0;
+      border-top: 1px dotted var(--rule-strong);
+      color: var(--ink-soft);
+      font-size: 0.94rem;
+    }
+    .cap li:first-child { border-top: none; }
+
+    /* ── Experience ──────────────────────────────────────────── */
+    .xp { border-top: 1px solid var(--ink); }
+    .xp-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: clamp(20px, 4vw, 48px);
+      padding: clamp(28px, 4.5vw, 44px) 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .xp-when { color: var(--ink-faint); }
+    .xp-when .mono { display: block; margin-bottom: 6px; color: var(--green-bright); }
+    .xp-when small { font-size: 0.8rem; }
+    .xp-body h3 {
+      font-family: var(--f-display);
+      font-weight: 560;
+      font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+      line-height: 1.15;
+    }
+    .xp-body .org {
+      font-family: var(--f-mono);
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: var(--ink-soft);
+      margin: 8px 0 14px;
+      display: block;
+    }
+    .xp-body p { color: var(--ink-soft); max-width: 66ch; }
+    .tags { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      font-family: var(--f-mono);
+      font-size: 0.66rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border: 1px solid var(--rule-strong);
+      border-radius: 2px;
+      padding: 4px 9px;
+      color: var(--ink-soft);
+      background: var(--card);
+    }
+
+    /* ── Projects ────────────────────────────────────────────── */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(16px, 2.6vw, 26px);
+    }
+    @property --spot {
+      syntax: "<percentage>";
+      inherits: false;
+      initial-value: 0%;
+    }
+    .proj {
+      --mx: 50%;
+      --my: 50%;
+      display: block;
+      text-decoration: none;
+      background: var(--card);
+      border: 1px solid var(--rule-strong);
+      border-radius: 4px;
+      padding: clamp(22px, 3vw, 30px);
+      position: relative;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s;
+      box-shadow: 3px 3px 0 var(--rule);
+    }
+    .proj::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 3px;
+      background: radial-gradient(340px circle at var(--mx) var(--my),
+                  color-mix(in srgb, var(--green-bright) 10%, transparent), transparent 65%);
+      opacity: 0;
+      transition: opacity .3s ease;
+      pointer-events: none;
+    }
+    @media (hover: hover) {
+      .proj:hover::before { opacity: 1; }
+    }
+    .proj > * { position: relative; }
+    .proj:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 6px 6px 0 var(--rule-strong);
+      border-color: var(--green);
+    }
+    .proj .idx {
+      font-family: var(--f-mono);
+      font-size: 0.68rem;
+      color: var(--brass);
+      letter-spacing: 0.1em;
+    }
+    .proj h3 {
+      font-family: var(--f-display);
+      font-weight: 560;
+      font-size: 1.3rem;
+      margin: 10px 0 10px;
+      line-height: 1.2;
+    }
+    .proj p { color: var(--ink-soft); font-size: 0.94rem; }
+    .proj .arrow {
+      position: absolute;
+      top: 20px; right: 22px;
+      font-family: var(--f-mono);
+      color: var(--green-bright);
+      transition: transform .18s;
+    }
+    .proj:hover .arrow { transform: translate(3px, -3px); }
+
+    /* ── Credentials ─────────────────────────────────────────── */
+    .cred-cols {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: clamp(32px, 6vw, 72px);
+    }
+    .cred-block h3 {
+      font-family: var(--f-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brass);
+      margin-bottom: 18px;
+    }
+    .cred-block + .cred-block { margin-top: 44px; }
+    .edu {
+      border-top: 1px solid var(--ink);
+      padding: 18px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .edu b { font-family: var(--f-display); font-weight: 560; font-size: 1.12rem; display: block; }
+    .edu span { color: var(--ink-faint); font-size: 0.88rem; display: block; margin-top: 4px; }
+    .edu p { color: var(--ink-soft); font-size: 0.92rem; margin-top: 10px; max-width: 60ch; }
+
+    .cert-list { border-top: 1px solid var(--ink); }
+    .cert-list li {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 2px;
+      border-bottom: 1px solid var(--rule);
+      font-size: 0.93rem;
+      align-items: baseline;
+    }
+    .cert-list li span { color: var(--ink-faint); font-family: var(--f-mono); font-size: 0.68rem; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+    .cert-list li.progress b { color: var(--green-bright); font-weight: 600; }
+
+    /* ── Contact ─────────────────────────────────────────────── */
+    .contact {
+      margin-top: clamp(72px, 10vw, 130px);
+      background: var(--contact-bg);
+      color: #ece6d4;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact::after {
+      content: "N.";
+      position: absolute;
+      right: -2vw;
+      bottom: -8vw;
+      font-family: var(--f-display);
+      font-size: clamp(12rem, 26vw, 24rem);
+      font-weight: 640;
+      color: transparent;
+      -webkit-text-stroke: 1px #3a382c;
+      pointer-events: none;
+    }
+    .contact-inner { padding: clamp(64px, 9vw, 110px) 0; position: relative; z-index: 1; }
+    .contact .mono { color: var(--brass); }
+    .contact h2 {
+      font-family: var(--f-display);
+      font-weight: 420;
+      font-size: clamp(2.2rem, 6vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      max-width: 18ch;
+      margin: 18px 0 22px;
+    }
+    .contact h2 em { font-style: italic; color: #9fd6b8; font-weight: 340; }
+    .contact p { color: #b9b4a0; max-width: 56ch; }
+    .contact-actions { margin-top: 38px; display: flex; gap: 14px; flex-wrap: wrap; }
+    .contact .btn-solid { background: #f5f1e8; color: #16150f; box-shadow: 3px 3px 0 #3a382c; }
+    .contact .btn-solid:hover { background: #fff; box-shadow: 5px 5px 0 #3a382c; }
+    .contact .btn-ghost { border-color: #4a4839; color: #ece6d4; }
+    .contact .btn-ghost:hover { border-color: #9fd6b8; color: #9fd6b8; }
+
+    footer {
+      background: var(--contact-bg);
+      border-top: 1px solid #33311f;
+      color: #8a8571;
+      font-size: 0.8rem;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 22px 0;
+      flex-wrap: wrap;
+    }
+    footer a { color: #b9b4a0; text-decoration: none; }
+    footer a:hover { color: #f5f1e8; }
+
+    /* ── Reveal animation ────────────────────────────────────── */
+    .rv { opacity: 0; transform: translateY(22px); transition: opacity .7s ease, transform .7s ease; }
+    .rv.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .rv { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* hero load stagger */
+    .hero .rv { transition-delay: var(--d, 0s); }
+
+    /* ── Responsive ──────────────────────────────────────────── */
+    @media (max-width: 880px) {
+      .about-grid, .cred-cols { grid-template-columns: 1fr; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stat:nth-child(3) { border-left: none; }
+      .stat { border-top: 1px solid var(--rule); }
+      .stat:nth-child(-n+2) { border-top: none; }
+      .xp-row { grid-template-columns: 1fr; gap: 10px; }
+      .proj-grid, .cap-grid { grid-template-columns: 1fr; }
+      nav.desktop { display: none; }
+      .menu-btn { display: block; }
+      .hero-sub { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap bar">
+      <a class="bar-name" href="#top">Oge&nbsp;Ndukuba<span>.</span></a>
+      <nav class="desktop" aria-label="Primary">
+        <a href="#profile">Profile</a>
+        <a href="#capability">Capability</a>
+        <a href="#record">Record</a>
+        <a href="#fieldwork">Fieldwork</a>
+        <a href="#credentials">Credentials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="bar-right">
+        <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode" title="Toggle theme">◐</button>
+      </div>
+    </div>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile">
+      <a href="#profile">Profile</a>
+      <a href="#capability">Capability</a>
+      <a href="#record">Record</a>
+      <a href="#fieldwork">Fieldwork</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+
+    <!-- ── HERO ─────────────────────────────────────────────── -->
+    <div class="hero">
+      <span class="hero-mark" aria-hidden="true">N.</span>
+      <div class="wrap">
+        <div class="hero-file mono rv" style="--d:.05s">
+          <span>File — sudo-compliance</span>
+          <span>North West England, UK</span>
+          <span>Status: In post</span>
+        </div>
+        <h1 class="rv" style="--d:.15s">Security risk, <em>translated</em> into business decisions.</h1>
+        <div class="hero-sub">
+          <p class="rv" style="--d:.3s">
+            I'm Oge Ndukuba, an information security professional. I turn security
+            policy, regulatory expectation and control frameworks into decisions
+            businesses can actually act on — third-party risk, vulnerability
+            reporting, ISO&nbsp;27001 and operational resilience. Currently practising
+            as a Business Information Security Officer in UK banking.
+          </p>
+          <div class="hero-actions rv" style="--d:.45s">
+            <a class="btn btn-solid" href="#fieldwork">View fieldwork</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+      </div>
+      <div class="tape rv" style="--d:.5s" aria-hidden="true">
+        <div class="tape-track">
+          <span>ISO/IEC 27001:2022</span><span>Third-Party Risk</span><span>DORA</span><span>Operational Resilience</span><span>NIST CSF</span><span>Vulnerability Management</span><span>Incident Response</span><span>PCI DSS</span><span>Risk Acceptance</span><span>UK GDPR</span><span>Security Governance</span><span>ISO/IEC 27001:2022</span><span>Third-Party Risk</span><span>DORA</span><span>Operational Resilience</span><span>NIST CSF</span><span>Vulnerability Management</span><span>Incident Response</span><span>PCI DSS</span><span>Risk Acceptance</span><span>UK GDPR</span><span>Security Governance</span>
+        </div>
+      </div>
+      <div class="wrap" style="margin-top: clamp(28px, 4vw, 48px);">
+        <div class="stats rv" style="--d:.55s">
+          <div class="stat"><b>08</b><span class="mono">Years in technology</span></div>
+          <div class="stat"><b>03</b><span class="mono">Years in dedicated security roles</span></div>
+          <div class="stat"><b>08</b><span class="mono">Industry certifications</span></div>
+          <div class="stat"><b>06</b><span class="mono">Published GRC frameworks</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── 01 PROFILE ───────────────────────────────────────── -->
+    <section id="profile">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <span class="num">01</span>
+          <h2>Profile</h2>
+          <span class="side mono">Who I am &amp; how I work</span>
+        </div>
+        <div class="about-grid">
+          <div class="rv">
+            <p>
+              I started out fascinated by how systems work. That curiosity turned into
+              a career across IT service management and information security, and I
+              kept getting pulled into the same place: where things break, where risk
+              surfaces, and where someone has to give the business a clear answer fast.
+            </p>
+            <p>
+              Today I work as a <strong>Business Information Security Officer at
+              Barclays</strong>, embedded in the Business Banking division. The job is
+              translation in both directions — turning group policy and regulatory
+              requirements into practical action for the business, and turning business
+              reality into risk decisions leadership can stand behind.
+            </p>
+            <p>
+              Outside the day job I research third-party cyber risk in UK banking for
+              my MSc dissertation and publish open GRC frameworks and tooling on
+              GitHub.
+            </p>
+          </div>
+          <div class="rv">
+            <ul class="ledger">
+              <li><i>a.</i>BISO, Business Banking — Barclays</li>
+              <li><i>b.</i>MBCS — Member of BCS, The Chartered Institute for IT</li>
+              <li><i>c.</i>ISO 27001 Lead Auditor · SSCP · CySA+ · Security+ · CISMP</li>
+              <li><i>d.</i>MSc Enterprise Cybersecurity in progress; dissertation on third-party cyber risk in UK banking</li>
+              <li><i>e.</i>Marketing &amp; Communications Officer, BCS Merseyside Branch</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 02 CAPABILITY ────────────────────────────────────── -->
+    <section id="capability">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <span class="num">02</span>
+          <h2>Capability</h2>
+          <span class="side mono">Domains of practice</span>
+        </div>
+        <div class="cap-grid rv">
+          <div class="cap">
+            <h3>Security Governance &amp; Risk</h3>
+            <span class="mono">Domain / 01</span>
+            <ul>
+              <li>Divisional security partnering (BISO model)</li>
+              <li>Risk assessment, registers &amp; risk acceptance</li>
+              <li>ISO/IEC 27001:2022 &amp; NIST CSF alignment</li>
+              <li>Third-party &amp; supply chain cyber risk</li>
+              <li>Policy translation for business stakeholders</li>
+            </ul>
+          </div>
+          <div class="cap">
+            <h3>Regulatory &amp; Resilience</h3>
+            <span class="mono">Domain / 02</span>
+            <ul>
+              <li>DORA — ICT risk &amp; third-party provisions</li>
+              <li>UK FCA / PRA operational resilience</li>
+              <li>PCI DSS controlled environments</li>
+              <li>UK GDPR &amp; data protection in practice</li>
+              <li>Incident classification &amp; regulatory notification</li>
+            </ul>
+          </div>
+          <div class="cap">
+            <h3>Security Operations</h3>
+            <span class="mono">Domain / 03</span>
+            <ul>
+              <li>Incident detection, triage &amp; response</li>
+              <li>SIEM monitoring — Datadog, Splunk</li>
+              <li>Vulnerability management &amp; reporting across SAST, container, infrastructure and IAM findings</li>
+              <li>Root cause analysis with engineering teams</li>
+              <li>Security awareness &amp; training delivery</li>
+            </ul>
+          </div>
+          <div class="cap">
+            <h3>Tooling &amp; Delivery</h3>
+            <span class="mono">Domain / 04</span>
+            <ul>
+              <li>Microsoft 365 &amp; Azure security stack</li>
+              <li>Excel / Power Query reporting pipelines</li>
+              <li>Nessus, OpenVAS, Nmap, Wireshark</li>
+              <li>Jira, Confluence, ServiceNow workflows</li>
+              <li>Stakeholder &amp; leadership communication</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 03 RECORD ────────────────────────────────────────── -->
+    <section id="record">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <span class="num">03</span>
+          <h2>Record</h2>
+          <span class="side mono">Professional experience</span>
+        </div>
+        <div class="xp">
+
+          <div class="xp-row rv">
+            <div class="xp-when">
+              <span class="mono">May 2026 — Present</span>
+              <small>Knutsford, UK · Hybrid</small>
+            </div>
+            <div class="xp-body">
+              <h3>Business Information Security Officer</h3>
+              <span class="org">Barclays — Business Banking</span>
+              <p>
+                Embedded security partner to the Business Banking division. Translating
+                group security policy and control requirements into division-level
+                action; consolidating vulnerability findings from multiple scanning
+                sources into leadership-ready reporting; supporting third-party risk
+                oversight and remediation tracking against DORA and UK PRA/FCA
+                operational resilience expectations.
+              </p>
+              <div class="tags">
+                <span class="tag">BISO</span><span class="tag">Third-Party Risk</span>
+                <span class="tag">Vulnerability Reporting</span><span class="tag">DORA</span>
+                <span class="tag">PRA / FCA</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="xp-row rv">
+            <div class="xp-when">
+              <span class="mono">Nov 2023 — May 2026</span>
+              <small>Manchester, UK · Hybrid</small>
+            </div>
+            <div class="xp-body">
+              <h3>Service &amp; Implementation Analyst</h3>
+              <span class="org">Conferma</span>
+              <p>
+                Secure implementation and service assurance in a PCI DSS and ISO 27001
+                controlled payments environment. SIEM-led incident triage achieving
+                15–30 minute mean time to detect; 100% adherence to ISO 27001 Annex A
+                security baselines; reduced repeat incidents by 10–20% through
+                structured root cause analysis with engineering and product teams.
+              </p>
+              <div class="tags">
+                <span class="tag">PCI DSS</span><span class="tag">ISO 27001</span>
+                <span class="tag">Datadog SIEM</span><span class="tag">Incident Response</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="xp-row rv">
+            <div class="xp-when">
+              <span class="mono">Jul 2023 — Nov 2023</span>
+              <small>Greater London, UK · Remote</small>
+            </div>
+            <div class="xp-body">
+              <h3>IT Risk Officer</h3>
+              <span class="org">Business Field Consulting</span>
+              <p>
+                Established the organisation's first IT asset risk function. Built
+                asset-based risk assessment workflows mapped to ISO 27001 Annex A and
+                NIST CSF controls; completed 10–20 asset-led risk assessments and
+                facilitated RACI workshops, reducing accountability ambiguity by 30%.
+              </p>
+              <div class="tags">
+                <span class="tag">Risk Management</span><span class="tag">ISO 27001</span>
+                <span class="tag">NIST CSF</span><span class="tag">Asset Governance</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="xp-row rv">
+            <div class="xp-when">
+              <span class="mono">Jan 2018 — Jul 2023</span>
+              <small>Abuja, Nigeria · Hybrid</small>
+            </div>
+            <div class="xp-body">
+              <h3>IT Team Lead</h3>
+              <span class="org">Brandeon Creative</span>
+              <p>
+                Led IT service delivery and project rollouts. Implemented ITIL-aligned
+                problem management reducing mean time to resolve by 45%; reduced repeat
+                incidents by 30–40% through preventative controls and process
+                improvement; managed stakeholder communication across business groups.
+              </p>
+              <div class="tags">
+                <span class="tag">ITIL</span><span class="tag">Service Management</span>
+                <span class="tag">Team Leadership</span><span class="tag">Infrastructure</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 04 FIELDWORK ─────────────────────────────────────── -->
+    <section id="fieldwork">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <span class="num">04</span>
+          <h2>Fieldwork</h2>
+          <span class="side mono">Published frameworks &amp; tooling</span>
+        </div>
+        <div class="proj-grid">
+
+          <a class="proj rv" href="https://github.com/sudo-compliance/tprm-continuous-monitoring" target="_blank" rel="noopener">
+            <span class="idx">F.01</span><span class="arrow">↗</span>
+            <h3>TPRM Continuous Monitoring Pipeline</h3>
+            <p>Continuous third-party risk monitoring using public data feeds, framed
+            against DORA and UK operational resilience requirements. Extends TPRM from
+            point-in-time assessment to ongoing assurance.</p>
+            <div class="tags"><span class="tag">TPRM</span><span class="tag">DORA</span><span class="tag">Continuous Monitoring</span></div>
+          </a>
+
+          <a class="proj rv" href="https://github.com/sudo-compliance/grc-lab/tree/main/topics/dora-iso27001-uk-operational-resilience-mapping" target="_blank" rel="noopener">
+            <span class="idx">F.02</span><span class="arrow">↗</span>
+            <h3>DORA → ISO 27001 Mapping</h3>
+            <p>Maps DORA's five pillars to ISO/IEC 27001:2022 Annex A controls with a
+            UK FCA and PRA operational resilience overlay. Identifies the gaps firms
+            operating under both regimes have to close.</p>
+            <div class="tags"><span class="tag">DORA</span><span class="tag">ISO 27001</span><span class="tag">FCA / PRA</span></div>
+          </a>
+
+          <a class="proj rv" href="https://github.com/sudo-compliance/grc-lab/tree/main/topics/grc-maturity-assessment-tool" target="_blank" rel="noopener">
+            <span class="idx">F.03</span><span class="arrow">↗</span>
+            <h3>GRC Maturity Assessment Tool</h3>
+            <p>Browser-based maturity assessment across 10 GRC domains and 40
+            questions, aligned to ISO 27001:2022 with DORA and FCA/PRA touchpoints.
+            Produces scored output, a radar chart and prioritised recommendations.</p>
+            <div class="tags"><span class="tag">GRC</span><span class="tag">Self-Assessment</span><span class="tag">ISO 27001</span></div>
+          </a>
+
+          <a class="proj rv" href="https://github.com/sudo-compliance/grc-lab" target="_blank" rel="noopener">
+            <span class="idx">F.04</span><span class="arrow">↗</span>
+            <h3>Third-Party Risk Management Framework</h3>
+            <p>A practical, risk-based framework for assessing third-party vendors,
+            with a scoring matrix to standardise due diligence and support integration
+            decisions in secure SaaS ecosystems.</p>
+            <div class="tags"><span class="tag">TPRM</span><span class="tag">Risk Assessment</span><span class="tag">ISO 27001</span></div>
+          </a>
+
+          <a class="proj rv" href="https://github.com/sudo-compliance/grc-lab/tree/main/topics/incident-classification-escalation-framework" target="_blank" rel="noopener">
+            <span class="idx">F.05</span><span class="arrow">↗</span>
+            <h3>Incident Classification &amp; Escalation Framework</h3>
+            <p>Structured incident classification, escalation and regulatory
+            notification framework for financial services under DORA, FCA and PRA
+            requirements.</p>
+            <div class="tags"><span class="tag">Incident Response</span><span class="tag">DORA</span><span class="tag">Financial Services</span></div>
+          </a>
+
+          <a class="proj rv" href="https://github.com/sudo-compliance/grc-lab" target="_blank" rel="noopener">
+            <span class="idx">F.06</span><span class="arrow">↗</span>
+            <h3>Secure Service Delivery Framework</h3>
+            <p>Implementation and transition framework for secure SaaS client
+            onboarding, controlled service transition and audit-ready evidence,
+            aligned to ISO/IEC 27001 and ITIL 4.</p>
+            <div class="tags"><span class="tag">ISO 27001</span><span class="tag">ITIL 4</span><span class="tag">SaaS Security</span></div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 05 CREDENTIALS ───────────────────────────────────── -->
+    <section id="credentials">
+      <div class="wrap">
+        <div class="sec-head rv">
+          <span class="num">05</span>
+          <h2>Credentials</h2>
+          <span class="side mono">Education, certification &amp; service</span>
+        </div>
+        <div class="cred-cols">
+          <div class="rv">
+            <div class="cred-block">
+              <h3>Education</h3>
+              <div class="edu">
+                <b>MSc, Enterprise Cybersecurity — in progress</b>
+                <span>OPIT — Open Institute of Technology · Sep 2025 — Present</span>
+                <p>Dissertation: third-party cyber risk management in UK banking —
+                hybrid survey and interview design with an accompanying maturity model.
+                Coursework spans security governance, risk management, legal &amp;
+                compliance, network security, intrusion detection and cryptography.</p>
+              </div>
+              <div class="edu">
+                <b>BSc, Mass Communication</b>
+                <span>Chukwuemeka Odumegwu Ojukwu University · 2011 — 2015</span>
+                <p>Most Outstanding Alumnus award recipient. A communications
+                background that pays for itself daily: translating technical risk into
+                language business leaders act on.</p>
+              </div>
+            </div>
+            <div class="cred-block">
+              <h3>Volunteering &amp; Recognition</h3>
+              <ul class="cert-list">
+                <li><b>Marketing &amp; Comms Officer, Merseyside Branch — BCS</b><span>2025 —</span></li>
+                <li><b>BHF Action Team — British Heart Foundation</b><span>2025 —</span></li>
+                <li><b>Most Outstanding Alumnus — NAMCS</b><span>2025</span></li>
+              </ul>
+            </div>
+          </div>
+          <div class="rv">
+            <div class="cred-block">
+              <h3>Certifications</h3>
+              <ul class="cert-list">
+                <li><b>ISO/IEC 27001:2022 Lead Auditor</b><span>ISO/IEC</span></li>
+                <li><b>SSCP — Systems Security Certified Practitioner</b><span>ISC2</span></li>
+                <li><b>CySA+ — Cybersecurity Analyst</b><span>CompTIA</span></li>
+                <li><b>Security+</b><span>CompTIA</span></li>
+                <li><b>CISMP — Info. Security Management Principles</b><span>BCS</span></li>
+                <li><b>CC — Certified in Cybersecurity</b><span>ISC2</span></li>
+                <li><b>SC-900 — Security, Compliance &amp; Identity</b><span>Microsoft</span></li>
+                <li class="progress"><b>CISM — in progress</b><span>ISACA</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 06 CONTACT ───────────────────────────────────────── -->
+    <section class="contact" id="contact">
+      <div class="wrap contact-inner">
+        <span class="mono rv">06 — Contact</span>
+        <h2 class="rv">Security problems are <em>business</em> problems. Let's talk.</h2>
+        <p class="rv">
+          Open to conversations about security governance, third-party risk, GRC
+          initiatives and the odd hard problem wherever security meets the business.
+          Email is fastest; LinkedIn works too.
+        </p>
+        <div class="contact-actions rv">
+          <a class="btn btn-solid" href="mailto:ndukubaprosperoge@gmail.com">Email me</a>
+          <a class="btn btn-ghost" href="https://linkedin.com/in/ndukubaoge" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn btn-ghost" href="https://github.com/sudo-compliance" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© <span id="yr"></span> Oge Ndukuba. All views are my own and do not represent my employer.</span>
+      <span><a href="#top">Back to top ↑</a></span>
+    </div>
+  </footer>
+
+  <script>
+    // year
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // mobile menu
+    const btn = document.getElementById('menuBtn');
+    const nav = document.getElementById('mobileNav');
+    btn.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+      btn.textContent = open ? 'Close' : 'Menu';
+    });
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      nav.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      btn.textContent = 'Menu';
+    }));
+
+    // theme toggle (system-aware; manual choice persists if storage allows)
+    const themeBtn = document.getElementById('themeBtn');
+    const root = document.documentElement;
+    let stored = null;
+    try { stored = localStorage.getItem('theme'); } catch (e) {}
+    if (stored === 'dark' || stored === 'light') root.setAttribute('data-theme', stored);
+    themeBtn.addEventListener('click', () => {
+      const systemDark = matchMedia('(prefers-color-scheme: dark)').matches;
+      const current = root.getAttribute('data-theme') || (systemDark ? 'dark' : 'light');
+      const next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+
+    // project card cursor spotlight
+    if (matchMedia('(hover: hover)').matches) {
+      document.querySelectorAll('.proj').forEach(card => {
+        card.addEventListener('pointermove', e => {
+          const r = card.getBoundingClientRect();
+          card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+          card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+        });
+      });
+    }
+
+    // scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
