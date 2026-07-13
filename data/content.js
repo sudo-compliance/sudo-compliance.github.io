@@ -27,6 +27,7 @@ const PROFILE = {
   about: {
     summary: `Started out just fascinated by how systems work. That curiosity eventually turned into a career in Information Security and technical IT Service Management. I kept getting pulled into the messy technical stuff where things break, risks show up and teams need a clear answer fast.\n\nNow I bridge the gap between technical requirements and business reality, covering everything from security, incident response and data protection to agile service delivery. Whether I'm working with engineers, operations, leadership or end users, I focus on translating strict regulations into practical actions and delivering value.`,
     highlights: [
+      "Founder of Ardantis Ltd, building an AI-assisted career intelligence and coaching platform",
       "MBCS — Member of BCS, The Chartered Institute for IT",
       "SSCP, CySA+, Security+, CISMP, ISO 27001 Lead Auditor certified",
       "SIEM-led incident triage with 15-30 min Mean Time to Detect",
@@ -87,6 +88,14 @@ const PROFILE = {
 
   // ── Experience Timeline ────────────────────
   experience: [
+    {
+      role: "Founder",
+      company: "Ardantis Ltd",
+      period: "2026 - Present",
+      location: "Liverpool, UK",
+      description: `Founded Ardantis Ltd and building ACIS, the Ardantis Career Intelligence System: a career intelligence and coaching platform for immigrant professionals seeking mid-to-senior roles in the UK, US and Canada, and for career changers entering Information Security. Sole builder across product, design and engineering, with AI-assisted career roadmaps generated through the proprietary RISE Framework.`,
+      tags: ["Founder", "Career Intelligence", "AI Product Development", "Next.js"],
+    },
     {
       role: "Service & Implementation Analyst",
       company: "Conferma",
@@ -164,6 +173,13 @@ const PROFILE = {
       description: "A practical, risk-based framework for assessing third-party vendors with scoring matrix to standardise due diligence and support integration decisions in secure SaaS ecosystems.",
       tags: ["TPRM", "ISO 27001", "Risk Assessment"],
       link: "https://github.com/sudo-compliance/grc-lab",
+      featured: true,
+    },
+    {
+      title: "TPRM Continuous Monitoring Pipeline",
+      description: "Continuous third-party risk monitoring pipeline using public data feeds, framed against DORA and UK operational resilience requirements. Extends the TPRM framework from point-in-time assessment to ongoing assurance.",
+      tags: ["TPRM", "DORA", "Continuous Monitoring", "Operational Resilience"],
+      link: "https://github.com/sudo-compliance/tprm-continuous-monitoring",
       featured: true,
     },
     {
